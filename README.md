@@ -1,5 +1,4 @@
-# ProyectoWebPage
-# 🍕 Proyecto: Pizzería Online  
+# 🍕 Pizzería Online  
 
 ## 🚀 Descripción  
 Este es un proyecto en desarrollo que consiste en una página web para una pizzería, diseñada para ofrecer una experiencia interactiva y fluida a los clientes. Permite realizar pedidos personalizados de pizzas, seleccionar métodos de pago y entrega, y registrar la información en una base de datos para su gestión eficiente.  
