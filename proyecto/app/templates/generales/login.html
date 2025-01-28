@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Walter's Pizzas</title>
+    <!-- Cargar la etiqueta static -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="title">
+            <a href="{% url 'inicio' %}">
+                <img src="{% static 'images/pizza.png' %}" alt="Logo de Pizzas Grandiosas" class="icon">
+            </a>
+            <h1>Pizzas Grandiosas</h1>
+        </div>
+    </header>
+
+    <main class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="{% url 'login' %}" method="POST" class="login-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Iniciar Sesión</button>
+                <p>¿Olvidaste tu contraseña? <a href="{% url 'password_reset' %}">Recupérala aquí</a></p>
+                <p>¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></p>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pizzas Grandiosas. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

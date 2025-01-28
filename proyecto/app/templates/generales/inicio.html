@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walter's Pizzas - Inicio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <!-- Ruta dinámica para el login -->
+            <a href="{% url 'login' %}"> 
+                <img src="{% static 'images/pizza.png' %}" alt="Logo de Pizzas Grandiosas" class="icon">
+            </a>
+        </div>
+        <div class="title">
+            <h1>Walter's Pizzas</h1>
+            <p>¡Disfruta la mejor pizza del país!</p>
+        </div>
+        <div class="user-actions">
+            <!-- Botones con funciones de JavaScript -->
+            {% if user.is_authenticated %}
+            <span class="welcome-message">Bienvenido/a, {{ user.username }}</span>
+            <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit">Cerrar Sesión</button>
+            </form>
+        {% else %}
+            <button onclick="goToLogin()">Iniciar Sesión</button>
+            <button onclick="goToRegister()">Regístrate</button>
+        {% endif %}
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="dropdown">
+                <a href="{% url 'Tienda' %}">Menú Pizzas</a>
+            </li>
+            <li class="cart">
+                <!-- Cambié el href a una URL válida de Django -->
+                <a href="{% url 'Carrito' %}">Ordenes</a>
+                <img src="{% static 'images/online-shopping.png' %}" alt="Carrito de compras" class="icon">
+            </li>
+        </ul>
+    </nav>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <section class="promo">
+        <h2>Promoción Especial de Navidad</h2>
+        <!-- Imagen promocional con ruta estática -->
+        <img src="{% static 'images/promo.png' %}" alt="Promoción de Navidad">
+    </section>
+
+    <section class="history">
+        <h2>Nuestra Historia</h2>
+        <p>
+            Pizzas Grandiosas comenzó hace 10 años con un pequeño local en el corazón de la ciudad.
+            Gracias a la pasión por ofrecer la mejor pizza y un servicio excepcional, hoy contamos con
+            7 sucursales en todo el país. Nuestro compromiso es seguir creando momentos deliciosos para
+            nuestros clientes.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pizzas Grandiosas. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Archivo de JavaScript desde static -->
+    <script src="{% static 'js/inicio.js' %}"></script>
+</body>
+</html>

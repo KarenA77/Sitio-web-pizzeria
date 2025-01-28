@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrar sesión - Walter's Pizzas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="title">
+            <a href="{% url 'inicio' %}">
+                <img src="{% static 'images/pizza.png' %}" alt="Logo de Pizzas Grandiosas" class="icon">
+            </a>
+            <h1>Pizzas Grandiosas</h1>
+        </div>
+    </header>
+
+    <main class="login-container">
+        <h2>Has cerrado sesión</h2>
+        <p>Te has desconectado de tu cuenta exitosamente. Si deseas iniciar sesión de nuevo, haz clic en el siguiente enlace.</p>
+        {% csrf_token %}
+        <div class="form-actions">
+            <a href="{% url 'login' %}" class="btn btn-primary">Iniciar sesión</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Walter's Pizzas. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

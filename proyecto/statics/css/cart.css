@@ -1,0 +1,121 @@
+/* General styling for the page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the main container */
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Box elements (sections) */
+.box-element {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-outline-dark {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.btn-outline-dark:hover {
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+/* Cart rows */
+.cart-row {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-row:last-child {
+    border-bottom: none;
+}
+
+.cart-row img {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.cart-row p {
+    margin: 0;
+    padding: 0;
+}
+
+.row-image {
+    max-width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Quantity controls */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+.quantity img:hover {
+    transform: scale(1.1);
+}
